@@ -6,4 +6,5 @@
 # linguist-language=name     languages.yml         Highlighted and classified as name
 # linguist-vendored          vendor.yml            Excluded from stats
 
-release/ linguist-generated
+releases/ linguist-generated
+
