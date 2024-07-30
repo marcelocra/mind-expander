@@ -1,7 +1,4 @@
-import { h, render, htm, useReducer, useEffect } from "./deps.js";
-
-// Initialize htm with Preact
-const html = htm.bind(h);
+import { html, render, useReducer, useEffect } from "./deps.js";
 
 function App(props) {
   const [count, add] = useReducer((a, b) => a + b, 0);
