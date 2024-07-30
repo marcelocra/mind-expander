@@ -9,6 +9,7 @@ class DevCommand extends Command {
 
   DevCommand() {
     argParser.addFlag('example', abbr: 'e', help: 'print example description');
+    throw Exception('Not implemented.');
   }
 
   void run() {
@@ -24,8 +25,21 @@ class ReleaseCommand extends Command {
     // argParser.addFlag('flag', help: 'Show help');
   }
 
-  void run() {
-    print('running release command');
+  void run() async {
+    /// TODO: Implement this.
+    /// 1) Clear or create the release dir
+    /// 2) Copy files there
+    /// 3) Create a zip of the dir
+    /// 4) Tag all versions appropriately
+    var releaseDir = Directory('./release');
+
+    try {
+      if (!await releaseDir.exists()) {
+        await releaseDir.create();
+      }
+    } catch (e) {
+      print(e.toString());
+    }
   }
 }
 
