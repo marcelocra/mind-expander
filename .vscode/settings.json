@@ -1,3 +1,4 @@
 {
-  "deno.enablePaths": ["./popup/bin/reloader.mts"]
+  "deno.enablePaths": ["./popup/bin/reloader.mts"],
+  "lit-plugin.strict": true
 }

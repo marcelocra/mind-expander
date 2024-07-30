@@ -5,6 +5,7 @@
     "esbenp.prettier-vscode",
     "editorconfig.editorconfig",
     "denoland.vscode-deno",
-    "dart-code.flutter"
+    "dart-code.flutter",
+    "runem.lit-plugin"
   ]
 }
