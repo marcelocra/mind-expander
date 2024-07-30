@@ -2,10 +2,10 @@
   "manifest_version": 3,
   "version": "0.1.0",
   "name": "mindexpander",
-  "description": "A new flutter project.",
+  "description": "Mind Expander Chrome Extension.",
   "permissions": ["scripting", "activeTab", "storage", "notifications"],
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "service-worker/index.js"
   },
   "action": {
     "default_popup": "popup/index.html"
