@@ -1,5 +1,10 @@
 {
   "recommendations": [
+    "bradlc.vscode-tailwindcss",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "editorconfig.editorconfig",
+    "denoland.vscode-deno",
     "dart-code.flutter"
   ]
 }

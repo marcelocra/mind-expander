@@ -1,0 +1,3 @@
+{
+  "deno.enablePaths": ["./popup/bin/reloader.mts"]
+}
