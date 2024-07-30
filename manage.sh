@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-. $MCRA_BIN/.rc.common
+. $HOME/bin/common.sh
 this_file="$(mm_file_path "$0")"
 this_file_directory="$(mm_dir_path "$this_file")"
 current_directory="$(pwd)"
@@ -10,21 +10,22 @@ if [ "$current_directory" != "$this_file_directory" ]; then
 fi
 
 usage() {
-    echo 'Usage: ./manage.sh [command]'
-    echo
-    echo "All available commands are well documented in the './manage.sh' source."
-    echo "Either open that file directly or use the 'edit' command to open it in your \$EDITOR."
+    mm_trim '
+        Usage: ./manage.sh [command]
+
+        All available commands are well documented in the './manage.sh' source.
+        Either open that file directly or use the 'edit' command to open it in your \$EDITOR."
+    '
 }
 
 if [ $# -eq 0 ]; then
     usage
-    exit 1
+    fatal "\nERROR: No command provided."
 fi
 
 invalid_command() {
     usage
-    echo
-    fatal "Invalid command: $1"
+    fatal "\nInvalid command: $1"
 }
 
 while [ $# -gt 0 ]; do
@@ -97,15 +98,24 @@ while [ $# -gt 0 ]; do
 
             ;;
 
-        web)
+        flutter)
 
-            flutter help build web | nvim -R -
+            case "$2" in
+                help|-h|--help)
+                    flutter help build web | nvim -R -
+                    ;;
+                web)
+                    flutter build web --csp --pwa-strategy=none --wasm --base-href=/popup/
+                    ;;
+            esac
+
+            return $?
 
             ;;
-
-        h|help|--help|-h)
+        help|-h|--help)
 
             usage
+            return 0
 
             ;;
 
