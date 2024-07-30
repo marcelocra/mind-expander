@@ -1,4 +1,7 @@
 #!/usr/bin/env sh
+#
+# Runner for the project manager tool. Most changes should be made in the tool,
+# not here.
 
 set -e # Exit on error.
 
