@@ -1,6 +1,4 @@
-import { render } from "preact";
-import { useReducer } from "preact/hooks";
-import { html } from "htm/preact";
+import { render , useReducer, html } from './deps.js';
 
 export function App() {
   const [count, add] = useReducer((a, b) => a + b, 0);
