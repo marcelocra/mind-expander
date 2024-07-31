@@ -1,4 +1,4 @@
-import { h } from "./deps.js";
-import { htm } from "./deps.js";
+import { h } from "./deps/preact.js";
+import { htm } from "./deps/preact.js";
 
 export const html = htm.bind(h);

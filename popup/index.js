@@ -1,7 +1,9 @@
-import { render, useReducer, useEffect } from "./deps.js";
+import { render, useReducer, useEffect } from "./deps/preact.js";
 import { html } from "./globals.js";
 
-function App(props) {
+/** @param {{name: string}} props */
+function App({ name }) {
+  // @ts-ignore
   const [count, add] = useReducer((a, b) => a + b, 0);
 
   useEffect(() => {
