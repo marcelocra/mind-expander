@@ -1,4 +1,5 @@
-import { html, render, useReducer, useEffect } from "./deps.js";
+import { render, useReducer, useEffect } from "./deps.js";
+import { html } from "./globals.js";
 
 function App(props) {
   const [count, add] = useReducer((a, b) => a + b, 0);
@@ -8,10 +9,12 @@ function App(props) {
   }, [count]);
 
   return html`
-    <button onClick=${() => add(-1)}>Decrement</button>
-    <input readonly size="4" value=${count + 1} />
-    <input readonly size="4" value=${count} />
-    <button onClick=${() => add(1)}>Increment</button>
+    <div class="align">
+      <button onClick=${() => add(-1)}>Decrement</button>
+      <input readonly size="4" value=${count + 1} />
+      <input readonly size="4" value=${count} />
+      <button onClick=${() => add(1)}>Increment</button>
+    </div>
   `;
 }
 

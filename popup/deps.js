@@ -1,4 +1,6 @@
-import { h } from "./vendored/preact.mjs";
-import { default as htm } from "./vendored/htm.mjs";
+export * from "./vendored/preact.mjs";
 export * from "./vendored/preact-hooks.mjs";
-export const html = htm.bind(h);
+export * from "./vendored/htm.mjs";
+export { default as htm } from "./vendored/htm.mjs";
+
+// TODO: create a deps folder and one file per dependency

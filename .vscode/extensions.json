@@ -6,6 +6,7 @@
     "editorconfig.editorconfig",
     "denoland.vscode-deno",
     "dart-code.flutter",
-    "runem.lit-plugin"
+    "runem.lit-plugin",
+    "bierner.lit-html"
   ]
 }
