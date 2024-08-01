@@ -1,5 +1,4 @@
-import { render, useReducer, useEffect } from "./deps/preact.js";
-import { html } from "./globals.js";
+import { html, render, useReducer, useEffect } from "../deps/preact.js";
 
 /** @param {{name: string}} props */
 function App({ name }) {
@@ -11,7 +10,7 @@ function App({ name }) {
   }, [count]);
 
   return html`
-    <div class="align">
+    <div class="flex flex-col">
       <button onClick=${() => add(-1)}>Decrement</button>
       <input readonly size="4" value=${count + 1} />
       <input readonly size="4" value=${count} />
