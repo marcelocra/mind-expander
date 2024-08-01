@@ -3,5 +3,6 @@
 }
 
 body {
-  /* background-color: blue; */
+  /* 1rem = 16px (see :root). */
+  font-size: 1rem;
 }

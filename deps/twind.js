@@ -1,10 +1,10 @@
-// @ts-nocheck
+import "../vendored/twind-ext-forms-line_clamp-typography.js";
 
 twind.install({
   presets: [
-    // twind.presetExt(/* options */),
-    // twind.presetLineClamp(/* options */),
-    // twind.presetTailwindForms(/* options */),
-    // twind.presetTypography(/* options */),
+    twind.presetExt(),
+    twind.presetLineClamp(),
+    twind.presetTailwindForms(),
+    twind.presetTypography(),
   ],
 });
