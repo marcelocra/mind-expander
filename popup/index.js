@@ -10,11 +10,11 @@ function App({ name }) {
   }, [count]);
 
   return html`
-    <div class="flex flex-col">
-      <button onClick=${() => add(-1)}>Decrement</button>
-      <input readonly size="4" value=${count + 1} />
-      <input readonly size="4" value=${count} />
-      <button onClick=${() => add(1)}>Increment</button>
+    <div class="flex flex-col gap-3 justify-around min-h-screen bg-slate-100 p-10">
+      <button class="border rounded shadow-xl p-3 hover:animate-pulse" onClick=${() => add(-1)}>Decrement</button>
+      <input class="text-center bg-slate-100" readonly value=${count + 1} />
+      <input class="text-center bg-slate-100" readonly value=${count} />
+      <button class="border rounded shadow-xl p-3 hover:animate-pulse" onClick=${() => add(1)}>Increment</button>
     </div>
   `;
 }
