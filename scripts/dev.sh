@@ -2,6 +2,18 @@
 #
 # Runner for the project manager tool. Most changes should be made in the tool,
 # not here.
+. $HOME/bin/common.sh
+_THIS_SCRIPT="$(mm_file_path "$0")"; readonly _THIS_SCRIPT
+_THIS_FILE_DIR="$(mm_dir_path "$_THIS_SCRIPT")"; readonly _THIS_FILE_DIR
+_ROOT_DIR="$(dirname "$_THIS_FILE_DIR")"; readonly _ROOT_DIR
+
+if [ "$(basename $_ROOT_DIR)" != "mind-expander" ]; then
+    echo "This script: $_THIS_SCRIPT"
+    echo "This dir: $_THIS_FILE_DIR"
+    echo "Root dir: $_ROOT_DIR"
+    echo "This script must be run from the mind-expander root directory."
+    return 1
+fi
 
 set -e # Exit on error.
 
