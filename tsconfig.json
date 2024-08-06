@@ -1,4 +1,7 @@
 {
+  "include": ["background", "deps", "popup"],
+  "exclude": ["vendored"],
+
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig to read more about this file */
 
@@ -90,7 +93,5 @@
 
     /* Completeness */
     "skipLibCheck": true /* Skip type checking all .d.ts files. */
-  },
-  "include": ["deps", "popup", "background"],
-  "exclude": ["vendored"]
+  }
 }
