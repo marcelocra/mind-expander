@@ -13,7 +13,7 @@
     "preview": "vite preview",
     "//4": "Watch Tailwind changes and update output file.",
     "popup:tw:watch": "tailwindcss -i ./input.css -o ./popup/tw.css --watch",
-    "popup2:tw:watch": "tailwindcss -i ./input.css -o ./popup2/tw.css --watch"
+    "popup-vite:tw:watch": "tailwindcss -i ./input.css -o ./popup-vite/tw.css --watch"
   },
   "devDependencies": {
     "@rollup/plugin-babel": "^6.0.4",
