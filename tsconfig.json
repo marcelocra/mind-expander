@@ -1,5 +1,5 @@
 {
-  "include": ["background", "deps", "popup"],
+  "include": ["background", "deps", "popup*/**/*"],
   "exclude": ["vendored"],
 
   "compilerOptions": {
