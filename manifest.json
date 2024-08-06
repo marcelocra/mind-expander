@@ -5,7 +5,7 @@
   "description": "Mind Expander Chrome Extension.",
   "permissions": ["scripting", "activeTab", "storage", "notifications"],
   "background": {
-    "service_worker": "service-worker/index.js"
+    "service_worker": "background/index.js"
   },
   "action": {
     "default_popup": "popup/index.html"
