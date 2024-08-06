@@ -1,0 +1,11 @@
+{
+  "plugins": [
+    [
+      "htm",
+      {
+        "pragma": "h",
+        "import": "vue"
+      }
+    ]
+  ]
+}

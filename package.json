@@ -5,12 +5,12 @@
   "private": true,
   "license": "See the LICENSE file.",
   "scripts": {
-    "/// Start dev server. Aliases: `vite dev`, `vite serve`.": "------------------------------------------------------------------------------------------------",
+    "/// Start dev server. Aliases: `vite dev`, `vite serve`.": "-------------------------------------------------------------------------",
     "dev": "vite",
-    "/// Build for production.": "-------------------------------------------------------------------------------------------------------------------------------",
+    "/// Build for production.": "-------------------------------------------------------------------------",
     "popup:build": "tailwindcss --config ./popup/tailwind.config.js -i ./input.css -o ./popup/tw.css --minify && cd popup && vite build",
     "popup-vite:build": "tailwindcss --config ./popup-vite/tailwind.config.js -i ./input.css -o ./popup-vite/tw.css --minify && cd popup-vite && vite build",
-    "/// Watch Tailwind changes and update output file.": "------------------------------------------------------------------------------------------------------",
+    "/// Watch Tailwind changes and update output file.": "-------------------------------------------------------------------------",
     "popup:tw:watch": "tailwindcss --config ./popup/tailwind.config.js -i ./input.css -o ./popup/tw.css --watch",
     "popup-vite:tw:watch": "tailwindcss --config ./popup-vite/tailwind.config.js -i ./input.css -o ./popup-vite/tw.css --watch"
   },
@@ -26,7 +26,8 @@
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.5",
     "tailwindcss": "^3.4.7",
-    "vite": "^5.3.5"
+    "vite": "^5.3.5",
+    "vue": "^3.4.36"
   },
   "eslintConfig": {
     "extends": [

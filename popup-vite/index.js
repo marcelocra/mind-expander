@@ -1,24 +1,24 @@
-import { createApp, h, ref } from "../vendored/vue.mjs";
+import htm from "../vendored/htm.mjs";
+import { createApp, ref, h as vendoredH } from "../vendored/vue.mjs";
+
+const html = htm.bind(vendoredH);
 
 const MyComponent = {
   setup() {
     const count = ref(0);
     const buttonClass = "border rounded shadow-xl p-3 w-32";
 
-    return () =>
-      h("div", { class: "flex flex-col gap-3 justify-center items-center" }, [
-        h(
-          "button",
-          { class: buttonClass, onClick: () => count.value++ },
-          "Increment",
-        ),
-        h("p", count.value),
-        h(
-          "button",
-          { class: buttonClass, onClick: () => count.value-- },
-          "Decrement",
-        ),
-      ]);
+    return () => html`
+      <div class="flex flex-col items-center justify-center gap-3">
+        <button class="${buttonClass}" onclick=${() => count.value++}>
+          Increment
+        </button>
+        <p>${count.value}</p>
+        <button class="${buttonClass}" onclick=${() => count.value--}>
+          Decrement
+        </button>
+      </div>
+    `;
   },
 };
 
