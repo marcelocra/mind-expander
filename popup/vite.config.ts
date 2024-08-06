@@ -2,9 +2,9 @@ import { babel } from "@rollup/plugin-babel";
 import type { UserConfig } from "vite";
 
 export default {
-  base: "/popup-dist/",
+  base: "/popup-out/",
   build: {
-    outDir: "../popup-dist",
+    outDir: "../popup-out",
     emptyOutDir: true,
   },
   plugins: [babel()],

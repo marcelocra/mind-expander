@@ -5,15 +5,14 @@
   "private": true,
   "license": "See the LICENSE file.",
   "scripts": {
-    "//1": "Start dev server, aliases: `vite dev`, `vite serve`.",
+    "/// Start dev server. Aliases: `vite dev`, `vite serve`.": "------------------------------------------------------------------------------------------------",
     "dev": "vite",
-    "//2": "Build for production.",
-    "build": "vite build",
-    "//3": "Locally preview production build.",
-    "preview": "vite preview",
-    "//4": "Watch Tailwind changes and update output file.",
-    "popup:tw:watch": "tailwindcss -i ./input.css -o ./popup/tw.css --watch",
-    "popup-vite:tw:watch": "tailwindcss -i ./input.css -o ./popup-vite/tw.css --watch"
+    "/// Build for production.": "-------------------------------------------------------------------------------------------------------------------------------",
+    "popup:build": "tailwindcss --config ./popup/tailwind.config.js -i ./input.css -o ./popup/tw.css --minify && cd popup && vite build",
+    "popup-vite:build": "tailwindcss --config ./popup-vite/tailwind.config.js -i ./input.css -o ./popup-vite/tw.css --minify && cd popup-vite && vite build",
+    "/// Watch Tailwind changes and update output file.": "------------------------------------------------------------------------------------------------------",
+    "popup:tw:watch": "tailwindcss --config ./popup/tailwind.config.js -i ./input.css -o ./popup/tw.css --watch",
+    "popup-vite:tw:watch": "tailwindcss --config ./popup-vite/tailwind.config.js -i ./input.css -o ./popup-vite/tw.css --watch"
   },
   "devDependencies": {
     "@rollup/plugin-babel": "^6.0.4",

@@ -9,6 +9,8 @@
 releases/ linguist-generated
 vendored/ linguist-vendored
 .archives/ linguist-generated
+popup-dist/ linguist-generated
+popup-out/ linguist-generated
 
 # Git LFS
 # -------
