@@ -8,11 +8,16 @@
     "/// Start dev server. Aliases: `vite dev`, `vite serve`.": "-------------------------------------------------------------------------",
     "dev": "vite",
     "/// Build for production.": "-------------------------------------------------------------------------",
-    "popup:build": "tailwindcss --config ./popup/tailwind.config.js -i ./input.css -o ./popup/tw.css --minify && cd popup && vite build",
-    "popup-vite:build": "tailwindcss --config ./popup-vite/tailwind.config.js -i ./input.css -o ./popup-vite/tw.css --minify && cd popup-vite && vite build",
+    "popup:dist": "rm ./popup-dist && ln -s ./popup-out ./popup-dist",
+    "popup:build": "tailwindcss --config ./popup/tailwind.config.js -i ./input.css -o ./popup/tw.css --minify && cd popup && vite build && npm run popup:dist",
+    "popup-vue:build": "tailwindcss --config ./popup-vue/tailwind.config.js -i ./input.css -o ./popup-vue/tw.css --minify && cd popup-vue && vite build && npm run popup:dist",
     "/// Watch Tailwind changes and update output file.": "-------------------------------------------------------------------------",
     "popup:tw:watch": "tailwindcss --config ./popup/tailwind.config.js -i ./input.css -o ./popup/tw.css --watch",
-    "popup-vite:tw:watch": "tailwindcss --config ./popup-vite/tailwind.config.js -i ./input.css -o ./popup-vite/tw.css --watch"
+    "popup-vue:tw:watch": "tailwindcss --config ./popup-vue/tailwind.config.js -i ./input.css -o ./popup-vue/tw.css --watch",
+    "/// Dev using one of these projects": "-------------------------------------------------------------------------",
+    "dev:popup": "rm ./popup-dist && ln -s ./popup ./popup-dist && npm run popup:tw:watch",
+    "dev:popup-vue": "rm ./popup-dist && ln -s ./popup-vue ./popup-dist && npm run popup-vue:tw:watch",
+    "///end": "keep this here, to avoid headache with trailing comma."
   },
   "devDependencies": {
     "@rollup/plugin-babel": "^6.0.4",
