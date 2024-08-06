@@ -1,0 +1,60 @@
+{
+  "name": "mind-expander",
+  "version": "0.1.0 - TODO: synchronize with the `manifest.json` version.",
+  "type": "module",
+  "private": true,
+  "license": "See the LICENSE file.",
+  "scripts": {
+    "---": "Start dev server, aliases: `vite dev`, `vite serve`.",
+    "dev": "vite",
+    "-----": "Build for production.",
+    "build": "vite build",
+    "-------": "Locally preview production build.",
+    "preview": "vite preview"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "eslint": "^9.8.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.5",
+    "vite": "^5.3.5"
+  },
+  "eslintConfig": {
+    "extends": [
+      "eslint:recommended",
+      "google"
+    ],
+    "plugins": [
+      "prettier"
+    ]
+  },
+  "prettier": {
+    "importOrder": [
+      "^(node|npm):",
+      "<THIRD_PARTY_MODULES>",
+      "^@/(.*)$",
+      "^[./]"
+    ],
+    "importOrderSeparation": true,
+    "importOrderSortSpecifiers": true,
+    "plugins": [
+      "prettier-plugin-tailwindcss",
+      "@trivago/prettier-plugin-sort-imports"
+    ]
+  },
+  "engines": {
+    "node": ">= 20"
+  },
+  "engineStrict": true,
+  "author": {
+    "name": "Marcelo Almeida",
+    "email": "2532492+marcelocra@users.noreply.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marcelocra/mind-expander"
+  }
+}
