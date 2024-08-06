@@ -57,7 +57,5 @@
     "type": "git",
     "url": "https://github.com/marcelocra/mind-expander"
   },
-  "workspaces": [
-    "popup2"
-  ]
+  "workspaces": []
 }
