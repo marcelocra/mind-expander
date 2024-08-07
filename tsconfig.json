@@ -1,11 +1,5 @@
 {
-  "include": [
-    "background/",
-    "deps/",
-    "popup/**/*",
-    "popup-vue/**/*",
-    "@types/"
-  ],
+  "include": ["background/", "popup/**/*", "popup-vue/**/*", "libs/"],
   "exclude": ["vendored"],
 
   "compilerOptions": {
@@ -26,11 +20,13 @@
     "module": "ESNext" /* Specify what module code is generated. */,
     "rootDir": "./" /* Specify the root folder within your source files. */,
     "moduleResolution": "Bundler",
-    // "paths": {},                                      /* Specify a set of entries that re-map imports to additional lookup locations. */
+    "paths": {
+      // This is especially useful in js-only projects that must work in the browser without
+      // TypeScript.
+      "@/types": ["./libs/types.js"]
+    } /* Specify a set of entries that re-map imports to additional lookup locations. */,
     // "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */
-    "typeRoots": [
-      "@types"
-    ] /* Specify multiple folders that act like './node_modules/@types'. */,
+    // "typeRoots": [],                                  /* Specify multiple folders that act like './node_modules/@types'. */
     // "types": [],                                      /* Specify type package names to be included without being referenced in a source file. */
     // "allowUmdGlobalAccess": true,                     /* Allow accessing UMD globals from modules. */
     // "moduleSuffixes": [],                             /* List of file name suffixes to search when resolving a module. */

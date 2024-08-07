@@ -1,5 +1,5 @@
-import { html, render } from "../libs/deps.js";
-import { t } from "../libs/i18n.js";
+import { html, render } from "../../libs/deps.js";
+import { t } from "../../libs/i18n.js";
 
 function App() {
   const buttonClass = "border rounded shadow-xl p-3 w-32";
