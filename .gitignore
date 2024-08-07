@@ -32,5 +32,5 @@ dist-ssr/
 ###
 
 # Directory to which the popup page is compiled/transpiled to.
+popup-dist
 popup-out/
-
