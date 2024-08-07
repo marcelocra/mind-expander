@@ -1,10 +1,10 @@
 import { html, render, useState } from "../deps/preact.js";
-import en from "../i18n/en/translation.json" with { type: "json" };
-import ptBr from "../i18n/pt-BR/translation.json" with { type: "json" };
+import en from "../i18n/en/translation.js";
+import ptBr from "../i18n/pt-BR/translation.js";
 
 /** TODO: use this to facilitate translations. */
 const langs = { en, ptBr };
-const lang = ptBr
+const lang = ptBr;
 
 /** @type {typeof lang} */
 const t = lang;

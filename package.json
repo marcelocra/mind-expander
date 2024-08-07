@@ -52,9 +52,6 @@
     ],
     "importOrderSeparation": true,
     "importOrderSortSpecifiers": true,
-    "importOrderParserPlugins": [
-      "importAttributes"
-    ],
     "plugins": [
       "prettier-plugin-tailwindcss",
       "@trivago/prettier-plugin-sort-imports"
