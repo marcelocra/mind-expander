@@ -25,3 +25,12 @@ dist-ssr/
 .env
 .env.*
 
+
+
+###
+### Project specific.
+###
+
+# Directory to which the popup page is compiled/transpiled to.
+popup-out/
+
