@@ -14,7 +14,8 @@
     "/// Watch Tailwind changes and update output file.": "-------------------------------------------------------------------------",
     "popup:tw:watch": "tailwindcss --config ./popup/tailwind.config.js -i ./input.css -o ./popup/tw.css --watch",
     "popup-vue:tw:watch": "tailwindcss --config ./popup-vue/tailwind.config.js -i ./input.css -o ./popup-vue/tw.css --watch",
-    "/// Dev using one of these projects": "-------------------------------------------------------------------------",
+    "/// Dev. The default is `d`.": "-------------------------------------------------------------------------",
+    "d": "npm run dev:popup",
     "dev:popup": "rm ./popup-dist && ln -s ./popup ./popup-dist && npm run popup:tw:watch",
     "dev:popup-vue": "rm ./popup-dist && ln -s ./popup-vue ./popup-dist && npm run popup-vue:tw:watch",
     "///end": "keep this here, to avoid headache with trailing comma."
