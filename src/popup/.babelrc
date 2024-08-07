@@ -1,0 +1,13 @@
+{
+  // // Used to compile Preact html tagged templates to minified code.
+  // "plugins": [
+  //   [
+  //     "htm",
+  //     {
+  //       "pragma": "h",
+  //       "import": "htm/preact"
+  //     }
+  //   ]
+  // ],
+  "presets": ["@babel/preset-react"]
+}

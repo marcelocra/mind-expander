@@ -1,6 +1,6 @@
 {
-  "include": ["background/", "popup/**/*", "popup-vue/**/*", "libs/"],
-  "exclude": ["vendored"],
+  "include": ["src/"],
+  "exclude": ["src/vendored/"],
 
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig to read more about this file */
@@ -15,6 +15,8 @@
       "DOM",
       "ESNext"
     ] /* Specify a set of bundled library declaration files that describe the target runtime environment. */,
+
+    "jsx": "react-jsx",
 
     /* Modules */
     "module": "ESNext" /* Specify what module code is generated. */,
