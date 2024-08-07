@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./popup-vite/index.{html,js}"],
+  content: ["./src/popup-vite/**/*.{html,js}"],
   theme: {
     extend: {},
   },

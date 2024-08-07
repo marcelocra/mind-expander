@@ -10,7 +10,7 @@ function App() {
       }}>
         ${t.popupIcon.savePage}
       </>
-      <${SimpleButton} onclick=${() => {
+      <${SimpleButton} onClick=${() => {
         alert("summarize");
       }}>
         ${t.popupIcon.summarize}
