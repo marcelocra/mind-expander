@@ -1,19 +1,11 @@
-import { html, render } from "../../libs/deps.js";
+import { html } from "../../libs/deps.js";
 import { t } from "../../libs/i18n.js";
 
-function App() {
+/** @param {any} props */
+export function SimpleButton(props) {
   const buttonClass = "border rounded shadow-xl p-3 w-32";
 
   return html`
-    <div class="flex flex-col items-center justify-center gap-3">
-      <button class="${buttonClass}" onClick=${() => {}}>
-        ${t.popupIcon.savePage}
-      </button>
-      <button class="${buttonClass}" onClick=${() => {}}>
-        ${t.popupIcon.summarize}
-      </button>
-    </div>
+    <button class="${buttonClass}" ${{ ...props }}>${props.children}</button>
   `;
 }
-
-render(html`<${App} />`, document.body);
