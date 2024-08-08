@@ -24,6 +24,7 @@
     "@rollup/plugin-babel": "^6.0.4",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "babel-plugin-htm": "^3.0.0",
+    "chrome-types": "^0.1.297",
     "daisyui": "^4.12.10",
     "eslint": "^9.8.0",
     "eslint-config-google": "^0.14.0",
