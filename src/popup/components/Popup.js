@@ -13,7 +13,7 @@ function Button({ onClick, children }) {
   `;
 }
 
-export function App() {
+export function Popup() {
   return html`
     <div class="flex flex-col items-center justify-center gap-3">
       <${Button} onClick=${() => alert("save")}>${t.popupIcon.savePage}<//>

@@ -1,4 +1,4 @@
 import { html, render } from "../deps-bundled.mjs";
-import { App } from "./components/App.js";
+import { Popup } from "./components/Popup.js";
 
-render(html`<${App} />`, document.body);
+render(html`<${Popup} />`, document.body);
