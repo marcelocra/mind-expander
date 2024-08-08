@@ -5,7 +5,7 @@ import { html } from "../../vendored/htm-preact.js";
 function Button({ onClick, children }) {
   return html`
     <button
-      class="w-32 rounded border px-3 py-1 text-sm shadow-xl hover:bg-gray-100"
+      class="btn btn-sm btn-outline w-full text-nowrap rounded-sm shadow-md"
       onClick=${onClick}
     >
       ${children}
