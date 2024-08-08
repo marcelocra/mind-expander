@@ -1,10 +1,8 @@
-import daisyui from "daisyui";
+import { plugins, theme } from "../libs/common-tailwind.config";
 
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./src/popup-vite/**/*.{html,js}"],
-  theme: {
-    extend: {},
-  },
-  plugins: [daisyui],
+  theme,
+  plugins,
 };
