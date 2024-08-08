@@ -8247,9 +8247,11 @@ var vue = {
   h,
   ref
 };
+var isDev = true;
 export {
   htm_module_default as htm,
   m as html,
+  isDev,
   B as render,
   vue
 };

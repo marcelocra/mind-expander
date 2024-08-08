@@ -22,3 +22,5 @@ export const vue = {
 export { html } from "htm/preact";
 export { render } from "preact";
 export { default as htm } from "htm";
+
+export const isDev = process.env.NODE_ENV === "development";

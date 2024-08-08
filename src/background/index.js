@@ -1,5 +1,5 @@
-import { html, render } from "../deps-bundled.mjs";
-import { contextMenuIds } from "../libs/constants.js";
+import { POPUP_MODE, STORAGE_KEYS, contextMenuIds } from "../libs/constants.js";
+import { debug } from "../libs/debug.js";
 import { t } from "../libs/i18n.js";
 
 chrome.runtime.onInstalled.addListener(() => {
@@ -11,59 +11,21 @@ chrome.runtime.onInstalled.addListener(() => {
   });
 });
 
-// function Display() {
-//   return html`
-//     <div>
-//       <h1>Hello, World!</h1>
-//     </div>
-//   `;
-// }
-
-// let displayRoot = document.createElement("div");
-// displayRoot.id = "highlighter-root";
-// render(html`<${Display} />`, displayRoot);
-
-chrome.contextMenus.onClicked.addListener((item, tab) => {
+debug("bg: Registering context menu listener...");
+chrome.contextMenus.onClicked.addListener(async (item, tab) => {
   if (!tab || !tab.id || !tab.url || tab.url.includes("chrome://")) {
     return;
   }
-  chrome.scripting.executeScript({
-    target: { tabId: tab.id },
-    func: (
-      /** @type {chrome.contextMenus.OnClickData} */ item,
-      /** @type {chrome.tabs.Tab} */ tab,
-      /** @type {any} */ stuff,
-    ) => {
-      let display = document.createElement("div");
-      display.style.position = "absolute";
-      display.style.top = "10px";
-      display.style.right = "10px";
-      display.style.zIndex = "999999";
-      display.style.borderRadius = "4px";
-      display.style.textWrap = "wrap";
-      display.style.maxWidth = "35vw";
-      display.style.maxHeight = "80vh";
-      display.style.padding = "20px";
-      display.style.overflow = "auto";
-      display.style.overflowWrap = "break-word";
-      display.style.backgroundColor = "white";
-      display.style.border = "1px solid #e9e9e9";
-      display.innerHTML = `
-        <div style="font-weight: bold;">
-          ${tab.url}
-        </div>
-        <br />
-        <br />
-        <div style="font-size: 14px">
-          ${item.selectionText}
-        </div>
-      `;
+  await chrome.storage.sync.set({
+    [STORAGE_KEYS.POPUP_MODE]: POPUP_MODE.SHOW_SAVED_HIGHLIGHTS,
+    [STORAGE_KEYS.HIGHLIGHT_ITEM]: item,
+    [STORAGE_KEYS.HIGHLIGHT_TAB]: tab,
+  });
 
-      document.body.appendChild(display);
-      setTimeout(() => {
-        display.remove();
-      }, 5000);
-    },
-    args: [item, tab, {}],
+  await chrome.action.openPopup();
+
+  await chrome.storage.sync.set({
+    [STORAGE_KEYS.POPUP_MODE]: POPUP_MODE.DEFAULT,
   });
 });
+debug("bg: Done.");
