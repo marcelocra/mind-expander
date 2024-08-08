@@ -1,4 +1,4 @@
-/** @type {import('@/libs/types.js').Translation} */
+/** @type {import('@/types').Translation} */
 const translations = {
   meta: {
     lang: "en",
@@ -7,6 +7,10 @@ const translations = {
   popupIcon: {
     savePage: "Save page",
     summarize: "Summarize",
+  },
+
+  contextMenu: {
+    title: "highlight",
   },
 
   exampleWithVariable: "Welcome {{name}}",

@@ -8,6 +8,10 @@ const translations = {
     summarize: "Resumir",
   },
 
+  contextMenu: {
+    title: "Destacar",
+  },
+
   /** TODO: currently doesn't work. It is an idea for the future. */
   exampleWithVariable: "Bem vindo {{name}}",
   exampleWithPlural_one: "Você tem {{count}} mensagem lida.",
