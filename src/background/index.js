@@ -1,6 +1,6 @@
+import { html, render } from "../deps-bundled.mjs";
 import { contextMenuIds } from "../libs/constants.js";
 import { t } from "../libs/i18n.js";
-import { html, render } from "../vendored/htm-preact.js";
 
 chrome.runtime.onInstalled.addListener(() => {
   chrome.contextMenus.create({

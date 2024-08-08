@@ -1,11 +1,11 @@
+import { html } from "../../deps-bundled.mjs";
 import { t } from "../../libs/i18n.js";
-import { html } from "../../vendored/htm-preact.js";
 
 /** @param {any} props */
 function Button({ onClick, children }) {
   return html`
     <button
-      class="btn btn-sm btn-outline w-full text-nowrap rounded-sm shadow-md"
+      class="btn btn-sm btn-primary btn-outline w-full text-nowrap rounded-sm shadow-md"
       onClick=${onClick}
     >
       ${children}

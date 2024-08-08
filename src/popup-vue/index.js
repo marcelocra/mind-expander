@@ -1,7 +1,7 @@
-import htm from "../vendored/htm.mjs";
-import { createApp, ref, h as vendoredH } from "../vendored/vue.mjs";
+import { htm, vue } from "../deps-bundled.mjs";
 
-const html = htm.bind(vendoredH);
+const { createApp, h, ref } = vue;
+const html = htm.bind(h);
 
 const MyComponent = {
   setup() {
