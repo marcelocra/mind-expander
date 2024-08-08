@@ -3,9 +3,16 @@
   "version": "0.1.0",
   "name": "mindexpander",
   "description": "Mind Expander Chrome Extension.",
-  "permissions": ["scripting", "activeTab", "storage", "notifications"],
+  "permissions": [
+    "scripting",
+    "activeTab",
+    "storage",
+    "notifications",
+    "contextMenus"
+  ],
   "background": {
-    "service_worker": "background/index.js"
+    "service_worker": "background/index.js",
+    "type": "module"
   },
   "action": {
     "default_popup": "popup-dist/index.html"
