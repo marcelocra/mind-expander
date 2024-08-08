@@ -4,7 +4,7 @@
  * Bundles dependencies from node_modules into a single file, to be used in the browser.
  */
 import assert from "node:assert";
-import path, { format } from "node:path";
+import path from "node:path";
 import process from "node:process";
 import { parseArgs } from "node:util";
 
@@ -30,8 +30,8 @@ try {
   exitWithError(e, customErrorMsg);
 }
 
-const ENTRY_POINT = path.resolve(ROOT, "src/deps.js");
-const OUTFILE = path.resolve(ROOT, "src/vendored/bundle.mjs");
+const ENTRY_POINT = path.resolve(ROOT, "src/deps-declared.js");
+const OUTFILE = path.resolve(ROOT, "src/deps-bundled.mjs");
 
 const COMMON_OPTIONS = {
   entryPoints: [ENTRY_POINT],
@@ -39,7 +39,6 @@ const COMMON_OPTIONS = {
   outfile: OUTFILE,
   platform: "browser",
   format: "esm",
-  keepNames: true,
 };
 
 const COMMON_DEV_OPTIONS = {
@@ -56,7 +55,19 @@ async function watch() {
   console.log('Starting "watch" mode...');
   console.log("Press Ctrl+C to stop.");
 
-  let context = await esbuild.context(COMMON_DEV_OPTIONS);
+  let context = await esbuild.context({
+    ...COMMON_DEV_OPTIONS,
+    plugins: [
+      {
+        name: "add-console-separator",
+        setup(build) {
+          build.onStart(() => {
+            console.log("----------------------------------------------------");
+          });
+        },
+      },
+    ],
+  });
 
   process.on("SIGINT", async () => {
     console.log("Cleaning up...");
