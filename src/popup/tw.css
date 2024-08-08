@@ -1047,6 +1047,10 @@ html {
   width: 100%;
 }
 
+.w-32 {
+  width: 8rem;
+}
+
 .flex-col {
   flex-direction: column;
 }
