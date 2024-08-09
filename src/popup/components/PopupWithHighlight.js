@@ -1,5 +1,8 @@
 import { html } from "../../deps-bundled.mjs";
 
+/**
+ * @param {any} props
+ */
 export function PopupWithHighlight(props) {
   console.log(props);
 
